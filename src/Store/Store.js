@@ -4,7 +4,7 @@ import { EnemySlice } from "./EnemySlice";
 
 export const Store = configureStore({
   reducer: {
-    PlayerSlice: PlayerSlice.actions,
-    EnemySlice: EnemySlice.actions,
+    PlayerSlice: PlayerSlice.reducer,
+    EnemySlice: EnemySlice.reducer,
   },
 });
