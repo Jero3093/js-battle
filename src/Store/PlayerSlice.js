@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  Health: 2000,
+  Health: 6500,
   Attack: 300,
   Status: false,
 };
@@ -9,5 +9,21 @@ const initialState = {
 export const PlayerSlice = createSlice({
   name: "PlayerSlice",
   initialState,
-  reducers: {},
+  reducers: {
+    SetNewStatus: (state, action) => {
+      const NewState = action.payload;
+
+      state.Status = NewState;
+    },
+    IncreaseHealth: (state, action) => {
+      const Value = action.payload;
+
+      state.Health += Value;
+    },
+    DecreaseHealth: (state, action) => {
+      const Value = action.payload;
+
+      state.Health -= Value;
+    },
+  },
 });
